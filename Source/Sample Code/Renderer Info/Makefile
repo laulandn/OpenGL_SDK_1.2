@@ -1,0 +1,21 @@
+
+#CC=m68k-apple-macos-gcc
+#CXX=m68k-apple-macos-g++
+CC=powerpc-apple-macos-gcc
+CXX=powerpc-apple-macos-g++
+
+CFLAGS= -I../../../Headers
+LDFLAGS=-lOpenGLLibrary -lm
+
+OBJS=$(subst .c,.o,$(wildcard *.c))
+
+.c.o:
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+all: $(OBJS)
+#	$(CC) -o renderer_info.code.bin $(OBJS) $(LDFLAGS)
+	$(CC) -o renderer_info $(OBJS) $(LDFLAGS)
+	$(HOME)//sdl2macos9/xcoff2app.sh renderer_info
+
+clean:
+	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb renderer_info
