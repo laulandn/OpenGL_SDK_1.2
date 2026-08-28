@@ -1,0 +1,22 @@
+
+CC=m68k-apple-macos-gcc
+CXX=m68k-apple-macos-g++
+#CC=powerpc-apple-macos-gcc
+#CXX=powerpc-apple-macos-g++
+
+CFLAGS= -I../../../../Headers
+LDFLAGS= -lglut -lOpenGLUtility -lOpenGLLibrary -lDrawSprocketLib -lm
+
+OBJS=$(subst .c,.o,$(wildcard *.c))
+
+.c.o:
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+all: $(OBJS)
+	$(CXX) -o bluepony.code.bin $(OBJS) $(LDFLAGS)
+	../bin2app.sh bluepony
+#	$(CC) -o bluepony $(OBJS) $(LDFLAGS)
+#	$(HOME)/sdl2macos9/xcoff2app.sh bluepony
+
+clean:
+	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb bluepony

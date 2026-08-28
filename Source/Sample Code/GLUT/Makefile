@@ -2,7 +2,7 @@
 all:
 	make -i -C atlantis
 	make -i -C bluepony
-	make -i -C chess\ board
+	make -i -C chess?board
 	make -i -C gameglut
 	make -i -C geoface
 	make -i -C glflare
@@ -12,7 +12,7 @@ all:
 	make -i -C logo
 	make -i -C newave
 	make -i -C raceGL
-	make -i -C roller\ coaster
+	make -i -C roller?coaster
 	make -i -C underwater
 	make -i -C walker
 	make -i -C yacme
@@ -20,7 +20,7 @@ all:
 clean:
 	make -i -C atlantis clean
 	make -i -C bluepony clean
-	make -i -C chess\ board clean
+	make -i -C chess?board clean
 	make -i -C gameglut clean
 	make -i -C geoface clean
 	make -i -C glflare clean
@@ -30,7 +30,7 @@ clean:
 	make -i -C logo clean
 	make -i -C newave clean
 	make -i -C raceGL clean
-	make -i -C roller\ coaster clean
+	make -i -C roller?coaster clean
 	make -i -C underwater clean
 	make -i -C walker clean
 	make -i -C yacme clean

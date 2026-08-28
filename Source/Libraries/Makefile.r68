@@ -1,0 +1,17 @@
+
+all:
+	make -C glu -fMakefile.r68
+	make -C GLUT\ 3.7 -fMakefile.r68
+	make -i -C MUI -fMakefile.r68
+
+lib:
+	make -C glu -fMakefile.r68
+	make -C GLUT\ 3.7 -fMakefile.r68
+	make -i -C MUI -fMakefile.r68
+	cp */*.a .
+
+clean:
+	make -C glu -fMakefile.r68 clean
+	make -C GLUT\ 3.7 -fMakefile.r68 clean
+	make -i -C MUI -fMakefile.r68 clean
+	rm *.a

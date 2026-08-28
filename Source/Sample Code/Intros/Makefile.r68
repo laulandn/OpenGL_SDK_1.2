@@ -1,0 +1,10 @@
+
+all:
+	make -i -C IndexIntro -f Makefile.r68
+	make -i -C Intro -f Makefile.r68
+	make -i -C OffScreenIntro -f Makefile.r68
+	
+clean:
+	make -i -C IndexIntro -f Makefile.r68 clean
+	make -i -C Intro -f Makefile.r68 clean 
+	make -i -C OffScreenIntro -f Makefile.r68 clean

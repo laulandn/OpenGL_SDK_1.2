@@ -1,0 +1,7 @@
+
+all:
+	make -f Makefile.r68ppc -i -C calc
+	
+clean:
+	make -f Makefile.r68ppc -i -C calc clean
+	rm -rf */*.o

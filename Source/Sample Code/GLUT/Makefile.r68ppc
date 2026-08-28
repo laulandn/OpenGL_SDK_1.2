@@ -1,0 +1,35 @@
+
+all:
+	make -i -C atlantis -fMakefile.r68ppc
+	make -i -C bluepony -fMakefile.r68ppc
+	make -i -C chess -fMakefile.r68ppc
+	make -i -C geoface -fMakefile.r68ppc
+	make -i -C glflare -fMakefile.r68ppc
+	make -i -C gliq -fMakefile.r68ppc
+	make -i -C glutmech -fMakefile.r68ppc
+	make -i -C ideas -fMakefile.r68ppc
+	make -i -C OpenGL\ logo -fMakefile.r68ppc
+	make -i -C perf\ harness -fMakefile.r68ppc
+	make -i -C raceGL -fMakefile.r68ppc
+	make -i -C roller\ coaster -fMakefile.r68ppc
+	make -i -C skyfly -fMakefile.r68ppc
+	make -i -C underwater -fMakefile.r68ppc
+	make -i -C walker -fMakefile.r68ppc
+	
+clean:
+	make -i -C atlantis -fMakefile.r68ppc clean
+	make -i -C bluepony -fMakefile.r68ppc clean
+	make -i -C chess -fMakefile.r68ppc clean
+	make -i -C geoface -fMakefile.r68ppc clean
+	make -i -C glflare -fMakefile.r68ppc clean
+	make -i -C gliq -fMakefile.r68ppc clean
+	make -i -C glutmech -fMakefile.r68ppc clean
+	make -i -C ideas -fMakefile.r68ppc clean
+	make -i -C OpenGL\ logo -fMakefile.r68ppc clean
+	make -i -C perf\ harness -fMakefile.r68ppc clean
+	make -i -C raceGL -fMakefile.r68ppc clean
+	make -i -C roller\ coaster -fMakefile.r68ppc clean
+	make -i -C skyfly -fMakefile.r68ppc clean
+	make -i -C underwater -fMakefile.r68ppc clean
+	make -i -C walker -fMakefile.r68ppc clean
+	rm -rf */*.o

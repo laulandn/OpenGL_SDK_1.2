@@ -1,0 +1,22 @@
+
+CC=m68k-apple-macos-gcc
+CXX=m68k-apple-macos-g++
+#CC=powerpc-apple-macos-gcc
+#CXX=powerpc-apple-macos-g++
+
+CFLAGS= -I../../../../Headers
+LDFLAGS=-lOpenGLLibrary -lm
+
+OBJS=$(subst .c,.o,$(wildcard *.c))
+
+.c.o:
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+all: $(OBJS)
+	$(CC) -o aglIntro.code.bin $(OBJS) $(LDFLAGS)
+	$(HOME)/sdl2macos9/bin2app.sh aglIntro
+#	$(CC) -o aglIntro $(OBJS) $(LDFLAGS)
+#	$(HOME)/sdl2macos9/xcoff2app.sh aglIntro
+
+clean:
+	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb aglIntro
