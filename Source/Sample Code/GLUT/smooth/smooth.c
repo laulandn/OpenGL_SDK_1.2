@@ -416,14 +416,18 @@ motion(int x, int y)
   glutPostRedisplay();
 }
 
+#ifdef __MWERKS__
 #include <SIOUX.h>
+#endif
 
 int
 main(int argc, char** argv)
 {
   glutInitWindowSize(512, 512);
   glutInit(&argc, argv);
+#ifdef __MWERKS__
   SIOUXSettings.asktosaveonclose = true;
+#endif
 
   glutInitDisplayMode(GLUT_RGB | GLUT_DEPTH | GLUT_DOUBLE);
   glutCreateWindow("smooth");

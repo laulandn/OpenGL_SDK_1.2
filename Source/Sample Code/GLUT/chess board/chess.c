@@ -11,6 +11,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "glut.h"
 #include <math.h>
 #include "chess.h"

@@ -15,6 +15,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #include "glut.h"
 #include "chess.h"
@@ -23,9 +24,9 @@
 
 #define B 256
 
-static p[B + B + 2];
+static int p[B + B + 2];
 static GLfloat g[B + B + 2][3];
-static start = 1;
+static int start = 1;
 
 #define setup(i,b0,b1,r0,r1) \
         t = vec[i] + 10000.; \
@@ -38,7 +39,7 @@ GLfloat noise3(GLfloat vec[3])
 {
         int bx0, bx1, by0, by1, bz0, bz1, b00, b10, b01, b11;
         GLfloat rx0, rx1, ry0, ry1, rz0, rz1, *q, sx, sy, sz, a, b, c, d, t, u, v;
-        register i, j;
+        register int i, j;
 
         if (start) {
                 start = 0;

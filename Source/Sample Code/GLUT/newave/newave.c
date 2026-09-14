@@ -44,7 +44,7 @@
 #define GL_POLYGON_OFFSET_FILL   GL_POLYGON_OFFSET_EXT
 #endif
 
-typedef int bool;
+//typedef int bool;
 #define true 1
 #define false 0
 
@@ -66,7 +66,7 @@ float force[MAXGRID][MAXGRID],
       vertNorms[MAXGRID][MAXGRID][3],
       faceNorms[2][MAXGRID][MAXGRID][3],
       faceNormSegs[2][2][MAXGRID][MAXGRID][3];
-bool waving = false, editing = false, 
+int waving = false, editing = false, 
      drawFaceNorms = false, antialias = false,
      envMap = false;
 #define SQRTOFTWOINV 1.0 / 1.414213562
@@ -89,7 +89,7 @@ float zNear=15.0, zFar=100.0;
 float aspect = 5.0/4.0;
 long xsize, ysize;
 int downX, downY;
-bool leftButton = false, middleButton = false;
+int leftButton = false, middleButton = false;
 int i,j;
 GLfloat lightPosition[] = { 0.0, 0.0, 1.0, 1.0}; 
 int displayMenu, otherMenu, speedMenu, sizeMenu, 

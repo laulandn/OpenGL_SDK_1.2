@@ -104,6 +104,13 @@
 
 // functions (internal/private) ---------------------------------------------
 
+// Added...where are these?!?
+extern void DrawFrameRate (GLuint gFontList);
+extern void DrawCStringGL (char *gcstrMode, GLuint gFontList);
+extern GLuint BuildFontGL (AGLContext gaglContext, short fNum, int flag, int);
+extern void  DeleteFontGL (GLuint gFontList);
+
+
 void CToPStr (StringPtr outString, const char *inString);
 void ReportError (char * strError);
 OSStatus DSpDebugStr (OSStatus error);

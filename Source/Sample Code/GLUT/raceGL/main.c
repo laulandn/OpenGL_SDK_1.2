@@ -7,17 +7,28 @@
 #include "map.h"
 #include "sin.h"
 
+
 #define FOG
+
 
 GLfloat fogcol[4]   = { 1.0, 1.0, 1.0, 1.0 };
 GLfloat lightpos[4] = { 1.0, 1.0, 1.0, 0.0 };
 GLfloat lightamb[4] = { 0.2, 0.2, 0.2, 1.0 };
 GLfloat lightdif[4] = { 0.8, 0.8, 0.8, 1.0 };
 
+
 float speed = 0.1;
 int angle = 0, ang2 = 0;
 float lx=30.0, ly=20.0, lz = 0.0, fov = 0.2;
 GLboolean fog = GL_TRUE;
+
+
+extern void do_display();
+extern void init_sin();
+extern void init_lists();
+extern void init_map();
+extern void make_texture();
+
 
 void display(void)
 {

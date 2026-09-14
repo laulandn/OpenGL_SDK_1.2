@@ -45,6 +45,8 @@
 #include "glut.h"
 #include "atlantis.h"
 
+#include <GL/agl.h>
+
 #include <Fonts.h>
 
 

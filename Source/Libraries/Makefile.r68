@@ -3,15 +3,14 @@ all:
 	make -C glu -fMakefile.r68
 	make -C GLUT\ 3.7 -fMakefile.r68
 	make -i -C MUI -fMakefile.r68
-
-lib:
-	make -C glu -fMakefile.r68
-	make -C GLUT\ 3.7 -fMakefile.r68
-	make -i -C MUI -fMakefile.r68
 	cp */*.a .
+
+install:
+	make -f Makefile.r68
+	cp *.a $(HOME)/Retro68-build/toolchain/m68k-apple-macos/lib/.
 
 clean:
 	make -C glu -fMakefile.r68 clean
 	make -C GLUT\ 3.7 -fMakefile.r68 clean
 	make -i -C MUI -fMakefile.r68 clean
-	rm *.a
+	rm -f *.a
