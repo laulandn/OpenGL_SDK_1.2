@@ -16,7 +16,7 @@ all: $(OBJS)
 	$(CXX) -o underwater.code.bin $(OBJS) $(LDFLAGS)
 	../bin2app.sh underwater
 #	$(CC) -o underwater $(OBJS) $(LDFLAGS)
-#	$(HOME)/sdl2macos9/xcoff2app.sh underwater
+#	../xcoff2app.sh underwater
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb underwater

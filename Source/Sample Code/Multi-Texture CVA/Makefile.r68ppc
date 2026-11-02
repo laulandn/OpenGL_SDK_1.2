@@ -15,7 +15,7 @@ OBJS=$(subst .c,.o,$(wildcard *.c))
 all: $(OBJS)
 #	$(CC) -o multitex_cva.code.bin $(OBJS) $(LDFLAGS)
 	$(CC) -o multitex_cva $(OBJS) $(LDFLAGS)
-	$(HOME)//sdl2macos9/xcoff2app.sh multitex_cva
+	../xcoff2app.sh multitex_cva
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb multitex_cva

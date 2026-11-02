@@ -15,7 +15,7 @@ OBJS=$(subst .c,.o,$(wildcard *.c))
 all: $(OBJS)
 #	$(CC) -o yacme.code.bin $(OBJS) $(LDFLAGS)
 	$(CC) -o yacme $(OBJS) $(LDFLAGS)
-	$(HOME)/sdl2macos9/xcoff2app.sh yacme
+	../xcoff2app.sh yacme
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb yacme

@@ -15,7 +15,7 @@ OBJS=$(subst .c,.o,$(wildcard *.c))
 all: $(OBJS)
 #	$(CC) -o aglIntro.code.bin $(OBJS) $(LDFLAGS)
 	$(CC) -o aglIntro $(OBJS) $(LDFLAGS)
-	$(HOME)//sdl2macos9/xcoff2app.sh aglIntro
+	../xcoff2app.sh aglIntro
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb aglIntro

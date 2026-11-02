@@ -162,6 +162,7 @@ int main(int argc, char** argv)
 	GDHandle device;
 	GLuint   dnum = 0;
 
+  freopen ("stderr.txt", "w", stderr);
   freopen ("stdout.txt", "w", stdout);
 
 	device = GetDeviceList();

@@ -1,0 +1,22 @@
+
+#CC=m68k-apple-macos-gcc
+#CXX=m68k-apple-macos-g++
+CC=powerpc-apple-macos-gcc
+CXX=powerpc-apple-macos-g++
+
+CFLAGS= -I../../../../Headers -I../../../../Headers/MUI
+LDFLAGS= -lglmui -lglut -lOpenGLUtility -lOpenGLLibrary -lDrawSprocketLib -lContextualMenu -lm
+
+OBJS=$(subst .c,.o,$(wildcard *.c))
+
+.c.o:
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+all: $(OBJS)
+#	$(CXX) -o calc.code.bin $(OBJS) $(LDFLAGS)
+#	../bin2app.sh calc
+	$(CC) -o calc $(OBJS) $(LDFLAGS)
+	../xcoff2app.sh calc
+
+clean:
+	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb calc

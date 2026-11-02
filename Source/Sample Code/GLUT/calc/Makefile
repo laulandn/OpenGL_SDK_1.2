@@ -15,7 +15,7 @@ OBJS=$(subst .c,.o,$(wildcard *.c))
 all: $(OBJS)
 #	$(CC) -o calc.code.bin $(OBJS) $(LDFLAGS)
 	$(CC) -o calc $(OBJS) $(LDFLAGS)
-	$(HOME)/sdl2macos9/xcoff2app.sh calc
+	../xcoff2app.sh calc
 
 clean:
 	rm -f *.o

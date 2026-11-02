@@ -15,7 +15,7 @@ OBJS=$(subst .c,.o,$(wildcard *.c))
 all: $(OBJS)
 #	$(CC) -o renderer_info.code.bin $(OBJS) $(LDFLAGS)
 	$(CC) -o renderer_info $(OBJS) $(LDFLAGS)
-	$(HOME)//sdl2macos9/xcoff2app.sh renderer_info
+	../xcoff2app.sh renderer_info
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb renderer_info

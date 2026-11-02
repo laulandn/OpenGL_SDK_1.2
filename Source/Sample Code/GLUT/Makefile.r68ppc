@@ -1,35 +1,41 @@
 
 all:
-	make -i -C atlantis -fMakefile.r68ppc
-	make -i -C bluepony -fMakefile.r68ppc
-	make -i -C chess -fMakefile.r68ppc
-	make -i -C geoface -fMakefile.r68ppc
-	make -i -C glflare -fMakefile.r68ppc
-	make -i -C gliq -fMakefile.r68ppc
-	make -i -C glutmech -fMakefile.r68ppc
-	make -i -C ideas -fMakefile.r68ppc
-	make -i -C OpenGL\ logo -fMakefile.r68ppc
-	make -i -C perf\ harness -fMakefile.r68ppc
-	make -i -C raceGL -fMakefile.r68ppc
-	make -i -C roller\ coaster -fMakefile.r68ppc
-	make -i -C skyfly -fMakefile.r68ppc
-	make -i -C underwater -fMakefile.r68ppc
-	make -i -C walker -fMakefile.r68ppc
+	make -C atlantis -fMakefile.r68ppc
+	make -C bluepony -fMakefile.r68ppc
+#	make -C calc -fMakefile.r68ppc
+	make -C chess\ board -fMakefile.r68ppc
+	make -C gameglut -fMakefile.r68ppc
+	make -C geoface -fMakefile.r68ppc
+	make -C glflare -fMakefile.r68ppc
+	make -C gliq -fMakefile.r68ppc
+	make -C glutmech -fMakefile.r68ppc
+	make -C ideas -fMakefile.r68ppc
+	make -C logo -fMakefile.r68ppc
+	make -C newave -fMakefile.r68ppc
+	make -C raceGL -fMakefile.r68ppc
+	make -C roller\ coaster -fMakefile.r68ppc
+	make -C smooth -fMakefile.r68ppc
+	make -C underwater -fMakefile.r68ppc
+	make -C walker -fMakefile.r68ppc
+	make -C yacme -fMakefile.r68ppc
 	
 clean:
-	make -i -C atlantis -fMakefile.r68ppc clean
-	make -i -C bluepony -fMakefile.r68ppc clean
-	make -i -C chess -fMakefile.r68ppc clean
-	make -i -C geoface -fMakefile.r68ppc clean
-	make -i -C glflare -fMakefile.r68ppc clean
-	make -i -C gliq -fMakefile.r68ppc clean
-	make -i -C glutmech -fMakefile.r68ppc clean
-	make -i -C ideas -fMakefile.r68ppc clean
-	make -i -C OpenGL\ logo -fMakefile.r68ppc clean
-	make -i -C perf\ harness -fMakefile.r68ppc clean
-	make -i -C raceGL -fMakefile.r68ppc clean
-	make -i -C roller\ coaster -fMakefile.r68ppc clean
-	make -i -C skyfly -fMakefile.r68ppc clean
-	make -i -C underwater -fMakefile.r68ppc clean
-	make -i -C walker -fMakefile.r68ppc clean
-	rm -rf */*.o
+	make -C atlantis -fMakefile.r68ppc clean
+	make -C bluepony -fMakefile.r68ppc clean
+	make -C calc -fMakefile.r68ppc clean
+	make -C chess\ board -fMakefile.r68ppc clean
+	make -C gameglut -fMakefile.r68ppc clean
+	make -C geoface -fMakefile.r68ppc clean
+	make -C glflare -fMakefile.r68ppc clean
+	make -C gliq -fMakefile.r68ppc clean
+	make -C glutmech -fMakefile.r68ppc clean
+	make -C ideas -fMakefile.r68ppc clean
+	make -C logo -fMakefile.r68ppc clean
+	make -C newave -fMakefile.r68ppc clean
+	make -C raceGL -fMakefile.r68ppc clean
+	make -C roller\ coaster -fMakefile.r68ppc clean
+	make -C smooth -fMakefile.r68ppc clean
+	make -C underwater -fMakefile.r68ppc clean
+	make -C walker -fMakefile.r68ppc clean
+	make -C yacme -fMakefile.r68ppc clean
+	rm -rf */*.o */stderr.txt */stdout.txt */glut_error_log

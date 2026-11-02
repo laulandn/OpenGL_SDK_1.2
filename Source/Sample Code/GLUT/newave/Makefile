@@ -15,7 +15,7 @@ OBJS=$(subst .c,.o,$(wildcard *.c))
 all: $(OBJS)
 #	$(CC) -o newave.code.bin $(OBJS) $(LDFLAGS)
 	$(CC) -o newave $(OBJS) $(LDFLAGS)
-	$(HOME)/sdl2macos9/xcoff2app.sh newave
+	../xcoff2app.sh newave
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb newave

@@ -1,4 +1,4 @@
-LIBNAME=mui
+LIBNAME=glmui
 
 #CC=m68k-apple-macos-gcc
 #CXX=m68k-apple-macos-g++

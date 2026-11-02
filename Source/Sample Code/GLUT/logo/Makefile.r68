@@ -5,7 +5,7 @@ CXX=m68k-apple-macos-g++
 #CXX=powerpc-apple-macos-g++
 
 CFLAGS= -I../../../../Headers
-LDFLAGS= -lglut -lOpenGLUtility -lOpenGLLibrary -lDrawSprocketLib -lm
+LDFLAGS= -L../../../Libraries -lglut -lOpenGLUtility -lOpenGLLibrary -lDrawSprocketLib -lm
 
 OBJS=$(subst .c,.o,$(wildcard *.c))
 
@@ -16,7 +16,7 @@ all: $(OBJS)
 	$(CXX) -o logo.code.bin $(OBJS) $(LDFLAGS)
 	../bin2app.sh logo
 #	$(CC) -o logo $(OBJS) $(LDFLAGS)
-#	$(HOME)/sdl2macos9/xcoff2app.sh logo
+#	../xcoff2app.sh logo
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb logo

@@ -16,7 +16,7 @@ all: $(OBJS)
 	$(CXX) -o gameglut.code.bin $(OBJS) $(LDFLAGS)
 	../bin2app.sh gameglut
 #	$(CC) -o gameglut $(OBJS) $(LDFLAGS)
-#	$(HOME)/sdl2macos9/xcoff2app.sh gameglut
+#	../xcoff2app.sh gameglut
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb gameglut

@@ -15,7 +15,7 @@ OBJS=$(subst .c,.o,$(wildcard *.c))
 all: $(OBJS)
 #	$(CC) -o glutmech.code.bin $(OBJS) $(LDFLAGS)
 	$(CC) -o glutmech $(OBJS) $(LDFLAGS)
-	$(HOME)/sdl2macos9/xcoff2app.sh glutmech
+	../xcoff2app.sh glutmech
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb glutmech

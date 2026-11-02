@@ -41,13 +41,19 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#ifdef macintosh
 #include <timer.h>
+#endif
 #include "glut.h"
 #include "atlantis.h"
 
+#ifdef macintosh
 #include <GL/agl.h>
+#endif
 
+#ifdef macintosh
 #include <Fonts.h>
+#endif
 
 
 fishRec sharks[NUM_SHARKS];
@@ -66,11 +72,15 @@ GLboolean moving;
 
 static double mtime(void)
 {
+#ifdef macintosh
    UnsignedWide tk_time;
    
    Microseconds(&tk_time);
    
    return 4294.967296 * tk_time.hi + 0.000001 * tk_time.lo;
+#else
+  return 0.0;
+#endif
 }
 
 static double filter(double in, double *save)
@@ -94,7 +104,9 @@ void DrawStr(char *str)
 	if(bitmapBase == 0)
 	{
 		bitmapBase = glGenLists(256);
+#ifdef macintosh
 		aglUseFont(aglGetCurrentContext(), kFontIDNewYork, normal, 10, 0, 256, bitmapBase);
+#endif
 	}
 	
 	glListBase(bitmapBase);

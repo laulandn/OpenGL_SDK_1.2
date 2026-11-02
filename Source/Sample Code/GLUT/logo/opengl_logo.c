@@ -8,15 +8,21 @@
  * notice and the Dutch variable names :) stay in tact.
  */
 
+#ifdef macintosh
 #include "agl.h"
+#endif
 #include "glut.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#ifdef macintosh
 #include <timer.h>
+#endif
 
+#ifdef macintosh
 #include <Fonts.h>
+#endif
 
 
 GLfloat lightpos[4] = { 1.0, 1.0, 1.0, 0.0 };
@@ -34,11 +40,15 @@ GLint count  = 0;
 
 static double tnow(void)
 {
+#ifdef macintosh
    UnsignedWide time;
    
    Microseconds(&time);
    
    return 4294.967296 * time.hi + 0.000001 * time.lo;
+#else
+  return 0.0;
+#endif
 }
 
 static double filter(double in, double *save)
@@ -62,7 +72,9 @@ void DrawStr(char *str)
 	if(bitmapBase == 0)
 	{
 		bitmapBase = glGenLists(256);
+#ifdef macintosh
 		aglUseFont(aglGetCurrentContext(), kFontIDNewYork, normal, 10, 0, 256, bitmapBase);
+#endif
 	}
 	
 	glListBase(bitmapBase);
@@ -204,6 +216,9 @@ void SetCamera(void)
 
 int main(int argc, char *argv[])
 {
+  freopen ("stderr.txt", "w", stderr);
+  freopen ("stdout.txt", "w", stdout);
+
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_RGB | GLUT_DOUBLE | GLUT_MULTISAMPLE);
 	glutInitWindowPosition(50, 50);
 	glutInitWindowSize(w_win, h_win);

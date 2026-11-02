@@ -1,0 +1,7 @@
+
+all:
+	make -C Source -f Makefile.r68ppc
+	
+clean:
+	make -C Source -f Makefile.r68ppc clean
+	rm -f */*.o */*.a

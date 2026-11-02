@@ -16,7 +16,7 @@ all: $(OBJS)
 	$(CXX) -o rc.code.bin $(OBJS) $(LDFLAGS)
 	../bin2app.sh rc
 #	$(CC) -o rc $(OBJS) $(LDFLAGS)
-#	$(HOME)/sdl2macos9/xcoff2app.sh rc
+#	../xcoff2app.sh rc
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb rc

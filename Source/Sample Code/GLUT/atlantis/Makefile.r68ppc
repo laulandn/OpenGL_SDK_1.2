@@ -15,7 +15,7 @@ OBJS=$(subst .c,.o,$(wildcard *.c))
 all: $(OBJS)
 #	$(CC) -o atlantis.code.bin $(OBJS) $(LDFLAGS)
 	$(CC) -o atlantis $(OBJS) $(LDFLAGS)
-	$(HOME)/sdl2macos9/xcoff2app.sh atlantis
+	../xcoff2app.sh atlantis
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb atlantis

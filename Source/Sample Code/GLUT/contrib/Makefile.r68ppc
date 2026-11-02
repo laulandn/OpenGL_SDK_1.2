@@ -15,7 +15,7 @@ OBJS=$(subst .c,.o,$(wildcard *.c))
 all: $(OBJS)
 #	$(CC) -o bluepony.code.bin $(OBJS) $(LDFLAGS)
 	$(CC) -o bluepony $(OBJS) $(LDFLAGS)
-	$(HOME)/sdl2macos9/xcoff2app.sh bluepony
+	../xcoff2app.sh bluepony
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb bluepony

@@ -15,7 +15,7 @@ OBJS=$(subst .c,.o,$(wildcard *.c))
 all: $(OBJS)
 #	$(CC) -o logo.code.bin $(OBJS) $(LDFLAGS)
 	$(CC) -o logo $(OBJS) $(LDFLAGS)
-	$(HOME)/sdl2macos9/xcoff2app.sh logo
+	../xcoff2app.sh logo
 
 clean:
 	rm -f *.o

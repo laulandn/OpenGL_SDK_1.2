@@ -16,7 +16,7 @@ all: $(OBJS)
 	$(CXX) -o gliq.code.bin $(OBJS) $(LDFLAGS)
 	../bin2app.sh gliq
 #	$(CC) -o gliq $(OBJS) $(LDFLAGS)
-#	$(HOME)/sdl2macos9/xcoff2app.sh gliq
+#	../xcoff2app.sh gliq
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb gliq

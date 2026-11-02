@@ -274,6 +274,8 @@ void calculate_rc(void)
 	}
 	else
 	   fprintf(stderr, "Not understood: %s\n", cmd);
+	   // pantic!
+	   exit(5);
     }
     printf("Done.\nTotal of %d parts\n", tot);
     printf("Ended at %f, %f, %f\n", x[tot-1], y[tot-1], z[tot-1]);

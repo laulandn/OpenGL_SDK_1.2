@@ -5,17 +5,102 @@ CC=powerpc-apple-macos-gcc
 CXX=powerpc-apple-macos-g++
 
 CFLAGS= -I../../../../Headers
-LDFLAGS=-lOpenGLUtility -lOpenGLLibrary -lglut -lDrawSprocketLib -lContextualMenu -lm
+LDFLAGS=-lglut -lOpenGLUtility -lOpenGLLibrary -lm
 
-OBJS=$(subst .c,.o,$(wildcard *.c))
+OBJS=$(subst .c,.o,$(wildcard *.c)) $(subst .cpp,.o,$(wildcard *.cpp))
+
+.cpp.o:
+	$(CXX) $(CFLAGS) -c -o $@ $<
 
 .c.o:
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CXX) $(CFLAGS) -c -o $@ $<
 
 all: $(OBJS)
-#	$(CC) -o bluepony.code.bin $(OBJS) $(LDFLAGS)
-	$(CC) -o bluepony $(OBJS) $(LDFLAGS)
-	$(HOME)/sdl2macos9/xcoff2app.sh bluepony
+	$(CXX) -o accumaa.c accumaa.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh accumaa
+	$(CXX) -o af_depthcue af_depthcue.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh af_depthcue
+	$(CXX) -o af_teapots af_teapots.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh af_teapots
+	$(CXX) -o boundary boundary.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh boundary
+	$(CXX) -o convolve convolve.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh convolve
+	$(CXX) -o csg csg.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh csg
+	$(CXX) -o decal decal.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh decal
+	$(CXX) -o dinoshade dinoshade.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh dinoshade
+	$(CXX) -o dissolve dissolve.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh dissolve
+	$(CXX) -o envmap envmap.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh envmap
+	$(CXX) -o envphong envphong.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh envphong
+	$(CXX) -o field field.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh field
+	$(CXX) -o genmipmap genmipmap.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh genmipmap
+	$(CXX) -o haloed haloed.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh haloed
+	$(CXX) -o hello2rts hello2rts.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh hello2rts
+	$(CXX) -o hiddenline hiddenline.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh hiddenline
+	$(CXX) -o imgproc imgproc.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh imgproc
+	$(CXX) -o hiddenline hiddenline.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh hiddenline
+	$(CXX) -o mipmap_lines mipmap_lines.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh mipmap_lines
+	$(CXX) -o motionblur motionblur.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh motionblur
+	$(CXX) -o multilight multilight.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh multilight
+	$(CXX) -o occlude occlude.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh occlude
+	$(CXX) -o projshadow projshadow.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh projshadow
+	$(CXX) -o projtex projtex.o addfog.o texture.o $(LDFLAGS)
+	../xcoff2app.sh projtex
+	$(CXX) -o rasonly rasonly.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh rasonly
+	$(CXX) -o reflect reflect.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh reflect
+	$(CXX) -o shadowfun shadowfun.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh shadowfun
+	$(CXX) -o shadowmap shadowmap.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh shadowmap
+	$(CXX) -o shadowvol shadowvol.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh shadowvol
+	$(CXX) -o silhouette silhouette.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh silhouette
+	$(CXX) -o softshadow softshadow.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh softshadow
+	$(CXX) -o tess tess.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh tess
+	$(CXX) -o textext textext.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh textext
+	$(CXX) -o textile textile.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh textile
+	$(CXX) -o textrim textrim.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh textrim
+	$(CXX) -o texturesphere texturesphere.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh texturesphere
+	$(CXX) -o tvertex tvertex.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh tvertex
+	$(CXX) -o vox vox.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh vox
+	$(CXX) -o warp warp.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh warp
+	$(CXX) -o zcomposite zcomposite.o addfog.o $(LDFLAGS)
+	../xcoff2app.sh zcomposite
 
 clean:
-	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb bluepony
+	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb 
+	rm -f accumaa af_depthcue af_teapots boundary convolve csg decal dinoshade dissolve 
+	rm -f envmap envphong field genmipmap haloed hello2rts hiddenline imgproc mipmap_lines
+	rm -f motionblur multilight occlude projtex projshadow rasonly reflect shadowfun shadowmap shadowvol
+	rm -f silhouette softshadow tess textext textile textrim texturesphere tvertex
+	rm -f vox warp zcomposite

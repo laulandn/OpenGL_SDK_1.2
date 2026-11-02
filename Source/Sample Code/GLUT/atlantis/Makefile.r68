@@ -16,7 +16,7 @@ all: $(OBJS)
 	$(CXX) -o atlantis.code.bin $(OBJS) $(LDFLAGS)
 	../bin2app.sh atlantis
 #	$(CC) -o atlantis $(OBJS) $(LDFLAGS)
-#	$(HOME)/sdl2macos9/xcoff2app.sh atlantis
+#	../xcoff2app.sh atlantis
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb atlantis

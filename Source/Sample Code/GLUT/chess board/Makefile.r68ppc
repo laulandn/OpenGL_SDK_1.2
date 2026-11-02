@@ -15,7 +15,7 @@ OBJS=$(subst .c,.o,$(wildcard *.c))
 all: $(OBJS)
 #	$(CC) -o chess.code.bin $(OBJS) $(LDFLAGS)
 	$(CC) -o chess $(OBJS) $(LDFLAGS)
-	$(HOME)/sdl2macos9/xcoff2app.sh chess
+	../xcoff2app.sh chess
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb chess

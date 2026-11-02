@@ -16,7 +16,7 @@ all: $(OBJS)
 	$(CXX) -o bluepony.code.bin $(OBJS) $(LDFLAGS)
 	../bin2app.sh bluepony
 #	$(CC) -o bluepony $(OBJS) $(LDFLAGS)
-#	$(HOME)/sdl2macos9/xcoff2app.sh bluepony
+#	../xcoff2app.sh bluepony
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb bluepony

@@ -1,8 +1,8 @@
 
 all:
-	make -C Libraries -fMakefile.r68ppc
-	make -C Sample\ Code -fMakefile.r68ppc
+	make -C Libraries -f Makefile.r68ppc
+	make -C Sample\ Code -f Makefile.r68ppc
 	
 clean:
-	make -C Libraries -fMakefile.r68ppc clean
-	make -C Sample\ Code -fMakefile.r68ppc clean
+	make -C Libraries -f Makefile.r68ppc clean
+	make -C Sample\ Code -f Makefile.r68ppc clean

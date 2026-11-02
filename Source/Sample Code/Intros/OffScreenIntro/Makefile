@@ -15,7 +15,7 @@ OBJS=$(subst .c,.o,$(wildcard *.c))
 all: $(OBJS)
 #	$(CC) -o OffScreenIntro.code.bin $(OBJS) $(LDFLAGS)
 	$(CC) -o OffScreenIntro $(OBJS) $(LDFLAGS)
-	$(HOME)//sdl2macos9/xcoff2app.sh OffScreenIntro
+	../xcoff2app.sh OffScreenIntro
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb OffScreenIntro

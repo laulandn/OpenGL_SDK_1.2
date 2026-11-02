@@ -16,7 +16,7 @@ all: $(OBJS)
 	$(CXX) -o geoface.code.bin $(OBJS) $(LDFLAGS)
 	../bin2app.sh geoface
 #	$(CC) -o geoface $(OBJS) $(LDFLAGS)
-#	$(HOME)/sdl2macos9/xcoff2app.sh geoface
+#	../xcoff2app.sh geoface
 
 clean:
 	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb geoface

@@ -1,14 +1,14 @@
 
 all:
-	make -i -C GLUT-fMakefile.r68ppc
-	make -i -C Intros -fMakefile.r68ppc
-	make -i -C Multi-Texture\ CVA -fMakefile.r68ppc
-	make -i -C OpenGL\ DrawSprocket -fMakefile.r68ppc
-	make -i -C Renderer\ Info -fMakefile.r68ppc
+	make -C GLUT -f Makefile.r68ppc
+	make -C Intros -f Makefile.r68ppc
+	make -C Multi-Texture\ CVA -f Makefile.r68ppc
+	make -C OpenGL\ DrawSprocket -f Makefile.r68ppc
+	make -C Renderer\ Info -f Makefile.r68ppc
 	
 clean:
-	make -i -C GLUT-fMakefile.r68ppc clean
-	make -i -C Intros -fMakefile.r68ppc clean
-	make -i -C Multi-Texture\ CVA -fMakefile.r68ppc clean
-	make -i -C OpenGL\ DrawSprocket -fMakefile.r68ppc clean
-	make -i -C Renderer\ Info -fMakefile.r68ppc clean
+	make -C GLUT -f Makefile.r68ppc clean
+	make -C Intros -f Makefile.r68ppc clean
+	make -C Multi-Texture\ CVA -f Makefile.r68ppc clean
+	make -C OpenGL\ DrawSprocket -f Makefile.r68ppc clean
+	make -C Renderer\ Info -f Makefile.r68ppc clean

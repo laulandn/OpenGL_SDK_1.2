@@ -5,18 +5,102 @@ CXX=m68k-apple-macos-g++
 #CXX=powerpc-apple-macos-g++
 
 CFLAGS= -I../../../../Headers
-LDFLAGS= -lglut -lOpenGLUtility -lOpenGLLibrary -lDrawSprocketLib -lm
+LDFLAGS=-lglut -lOpenGLUtility -lOpenGLLibrary -lm
 
-OBJS=$(subst .c,.o,$(wildcard *.c))
+OBJS=$(subst .c,.o,$(wildcard *.c)) $(subst .cpp,.o,$(wildcard *.cpp))
+
+.cpp.o:
+	$(CXX) $(CFLAGS) -c -o $@ $<
 
 .c.o:
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CXX) $(CFLAGS) -c -o $@ $<
 
 all: $(OBJS)
-	$(CXX) -o bluepony.code.bin $(OBJS) $(LDFLAGS)
-	../bin2app.sh bluepony
-#	$(CC) -o bluepony $(OBJS) $(LDFLAGS)
-#	$(HOME)/sdl2macos9/xcoff2app.sh bluepony
+	$(CXX) -o accumaa.c.code.bin accumaa.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh accumaa.c
+	$(CXX) -o af_depthcue.code.bin af_depthcue.o addfog.o $(LDFLAGS)
+	../bin2app.sh af_depthcue
+	$(CXX) -o af_teapots.code.bin af_teapots.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh af_teapots
+	$(CXX) -o boundary.code.bin boundary.o addfog.o $(LDFLAGS)
+	../bin2app.sh boundary
+	$(CXX) -o convolve.code.bin convolve.o addfog.o $(LDFLAGS)
+	../bin2app.sh convolve
+	$(CXX) -o csg.code.bin csg.o addfog.o $(LDFLAGS)
+	../bin2app.sh csg
+	$(CXX) -o decal.code.bin decal.o addfog.o $(LDFLAGS)
+	../bin2app.sh decal
+	$(CXX) -o dinoshade.code.bin dinoshade.o addfog.o $(LDFLAGS)
+	../bin2app.sh dinoshade
+	$(CXX) -o dissolve.code.bin dissolve.o addfog.o $(LDFLAGS)
+	../bin2app.sh dissolve
+	$(CXX) -o envmap.code.bin envmap.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh envmap
+	$(CXX) -o envphong.code.bin envphong.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh envphong
+	$(CXX) -o field.code.bin field.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh field
+	$(CXX) -o genmipmap.code.bin genmipmap.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh genmipmap
+	$(CXX) -o haloed.code.bin haloed.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh haloed
+	$(CXX) -o hello2rts.code.bin hello2rts.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh hello2rts
+	$(CXX) -o hiddenline.code.bin hiddenline.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh hiddenline
+	$(CXX) -o imgproc.code.bin imgproc.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh imgproc
+	$(CXX) -o hiddenline.code.bin hiddenline.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh hiddenline
+	$(CXX) -o mipmap_lines.code.bin mipmap_lines.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh mipmap_lines
+	$(CXX) -o motionblur.code.bin motionblur.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh motionblur
+	$(CXX) -o multilight.code.bin multilight.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh multilight
+	$(CXX) -o occlude.code.bin occlude.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh occlude
+	$(CXX) -o projshadow.code.bin projshadow.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh projshadow
+	$(CXX) -o projtex.code.bin projtex.o addfog.o texture.o $(LDFLAGS)
+	../bin2app.sh projtex
+	$(CXX) -o rasonly.code.bin rasonly.o addfog.o $(LDFLAGS)
+	../bin2app.sh rasonly
+	$(CXX) -o reflect.code.bin reflect.o addfog.o $(LDFLAGS)
+	../bin2app.sh reflect
+	$(CXX) -o shadowfun.code.bin shadowfun.o addfog.o $(LDFLAGS)
+	../bin2app.sh shadowfun
+	$(CXX) -o shadowmap.code.bin shadowmap.o addfog.o $(LDFLAGS)
+	../bin2app.sh shadowmap
+	$(CXX) -o shadowvol.code.bin shadowvol.o addfog.o $(LDFLAGS)
+	../bin2app.sh shadowvol
+	$(CXX) -o silhouette.code.bin silhouette.o addfog.o $(LDFLAGS)
+	../bin2app.sh silhouette
+	$(CXX) -o softshadow.code.bin softshadow.o addfog.o $(LDFLAGS)
+	../bin2app.sh softshadow
+	$(CXX) -o tess.code.bin tess.o addfog.o $(LDFLAGS)
+	../bin2app.sh tess
+	$(CXX) -o textext.code.bin textext.o addfog.o $(LDFLAGS)
+	../bin2app.sh textext
+	$(CXX) -o textile.code.bin textile.o addfog.o $(LDFLAGS)
+	../bin2app.sh textile
+	$(CXX) -o textrim.code.bin textrim.o addfog.o $(LDFLAGS)
+	../bin2app.sh textrim
+	$(CXX) -o texturesphere.code.bin texturesphere.o addfog.o $(LDFLAGS)
+	../bin2app.sh texturesphere
+	$(CXX) -o tvertex.code.bin tvertex.o addfog.o $(LDFLAGS)
+	../bin2app.sh tvertex
+	$(CXX) -o vox.code.bin vox.o addfog.o $(LDFLAGS)
+	../bin2app.sh vox
+	$(CXX) -o warp.code.bin warp.o addfog.o $(LDFLAGS)
+	../bin2app.sh warp
+	$(CXX) -o zcomposite.code.bin zcomposite.o addfog.o $(LDFLAGS)
+	../bin2app.sh zcomposite
 
 clean:
-	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb bluepony
+	rm -f *.o *.bin *.pef *.APPL *.dsk *.gdb 
+	rm -f accumaa af_depthcue af_teapots boundary convolve csg decal dinoshade dissolve 
+	rm -f envmap envphong field genmipmap haloed hello2rts hiddenline imgproc mipmap_lines
+	rm -f motionblur multilight occlude projtex rasonly shadowfun shadowmap shadowvol
+	rm -f silhouette softshadow tess textext textile textrim texturesphere tvertex
+	rm -f vox warp zcomposite

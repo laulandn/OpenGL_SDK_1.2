@@ -142,6 +142,8 @@ int main(int argc, char *argv[])
 {
 	int sz;
 	
+ 	glutInit(&argc, argv);
+	
 	if (argc > 1)
 		sz = atoi(argv[1]);
 	else
